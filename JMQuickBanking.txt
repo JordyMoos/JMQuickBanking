@@ -1,0 +1,8 @@
+## Title: JMQuickBanking
+## APIVersion: 100013
+## SavedVariables: JMQuickBankingSavedVariables
+## Version: 0.1
+## Author: Jordy Moos
+## Description: Jordy Moos' Quick Banking
+
+JMQuickBanking.lua
