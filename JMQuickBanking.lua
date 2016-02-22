@@ -36,7 +36,7 @@ local function Initialize()
     })
     --BuyList = SavedVariables.buyList
 
-    
+
 end
 
 
