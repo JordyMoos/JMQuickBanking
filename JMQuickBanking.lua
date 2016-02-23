@@ -20,6 +20,26 @@ local Config = {
 
 local SavedVariables = {}
 
+
+-- QuickBankingLibrary
+local QBL = {}
+
+QBL.getItems = function (bagId)
+    local items = {}
+    local bagSize = GetBagSize(bagId)
+
+    for index = 0, bagSize do
+        _, stack, _, _, _, _ = GetItemInfo(bagId, index)
+        type = GetItemType(bagId, index)
+        filter = GetItemFilterTypeInfo(bagId, index)
+        id = GetItemUniqueId(bagId, index)
+        link = GetItemLink(bagId, index, LINK_STYLE_DEFAULT)
+
+        d('ID:' .. id)
+    end
+end
+
+
 --[[
 
     Initialize
