@@ -28,15 +28,29 @@ QBL.getItems = function (bagId)
     local items = {}
     local bagSize = GetBagSize(bagId)
 
-    for index = 0, bagSize do
-        _, stack, _, _, _, _ = GetItemInfo(bagId, index)
-        type = GetItemType(bagId, index)
-        filter = GetItemFilterTypeInfo(bagId, index)
-        id = GetItemUniqueId(bagId, index)
-        link = GetItemLink(bagId, index, LINK_STYLE_DEFAULT)
+--    StackBag(bagId)
 
-        d('ID:' .. id)
+    for index = 0, bagSize do
+        local type = GetItemType(bagId, index)
+        if type ~= ITEMTYPE_NONE then
+            local name = GetItemName(bagId, index)
+            local filter = GetItemFilterTypeInfo(bagId, index)
+            local link = GetItemLink(bagId, index, LINK_STYLE_DEFAULT)
+            local  _, stack, _, _, _, _ = GetItemInfo(bagId, index)
+
+            table.insert(items, {
+                type = type,
+                name = name,
+                filter = filter,
+                link = link,
+                stack = stack,
+            })
+        end
     end
+
+--    d(items)
+
+    return items
 end
 
 
@@ -56,7 +70,9 @@ local function Initialize()
     })
     --BuyList = SavedVariables.buyList
 
-
+    zo_callLater(function ()
+        QBL.getItems(BAG_BACKPACK)
+    end, 5000)
 end
 
 
