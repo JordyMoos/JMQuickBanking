@@ -70,6 +70,11 @@ local function Initialize()
     })
     --BuyList = SavedVariables.buyList
 
+    EVENT_MANAGER:RegisterForEvent(Config.name, EVENT_OPEN_BANK, function () end)
+    EVENT_MANAGER:RegisterForEvent(Config.name, EVENT_CLOSE_BANK, function () end)
+    EVENT_MANAGER:RegisterForEvent(Config.name, EVENT_BANK_IS_FULL, function () end)
+    EVENT_MANAGER:RegisterForEvent(Config.name, EVENT_INVENTORY_BOUGHT_BANK_SPACE, function () end)
+
     zo_callLater(function ()
         QBL.getItems(BAG_BACKPACK)
     end, 5000)
