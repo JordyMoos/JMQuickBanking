@@ -1,0 +1,33 @@
+<GuiXml>
+    <Controls>
+
+        <!--
+            Put and Get buttons
+        -->
+
+        <TopLevelControl name="JMQuickBanking_ButtonWindow" mouseEnabled="true" movable="true" hidden="false">
+            <Dimensions x="300" y="50" />
+            <Anchor point="TOP" offsetY="50" relativePoint="TOP" />
+
+            <Controls>
+                <Button name="$(parent)_Put" inherits="ZO_DefaultButton" text="Put">
+                    <Dimensions x="120" y="30" />
+                    <Anchor point="BOTTOMLEFT" offsetX="5" offsetY="-20" />
+                    <OnClicked>
+                        d('Clicked put')
+                    </OnClicked>
+                </Button>
+                <Button name="$(parent)_Get" inherits="ZO_DefaultButton" text="Put">
+                    <Dimensions x="120" y="30" />
+                    <Anchor point="BOTTOMRIGHT" offsetX="5" offsetY="-20" />
+                    <OnClicked>
+                        d('Clicked put')
+                    </OnClicked>
+                </Button>
+            </Controls>
+
+        </TopLevelControl>
+
+
+    </Controls>
+</GuiXml>
